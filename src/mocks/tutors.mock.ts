@@ -10,7 +10,7 @@ export const tutorsMock: Tutor[] = [
     id: "t1",
     name: "Laura Méndez",
     description: "Especialista en cálculo y álgebra avanzada.",
-    subjects: ["Cálculo", "Álgebra"],
+    subjects: ["Cálculo", "Álgebra", "Programacion Orientada a Objetos"],
     rating: 4,
     educationLevel: "Licenciatura",
     skills: [

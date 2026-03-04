@@ -34,8 +34,8 @@ export const studentsMock: Student[] = [
     id: "s4",
     name: "Lucas Gómez",
     level: "8vo semestre",
-    needs: ["Preparación para tesis", "Revisión de proyectos"],
-    interests: ["Investigación", "Desarrollo de software"],
+    needs: ["Preparación para tesis", "Revisión de proyectos", "Ayuda con su soledad"],
+    interests: ["Investigación", "Desarrollo de software", "Destasador de pollos"],
     rating: 5,
   },
 ];
