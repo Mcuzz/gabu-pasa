@@ -12,5 +12,6 @@ export const subjectsMock = [
   "Matemáticas aplicadas",
   "Química",
   "Programación",
-  "Desarrollo de software"
+  "Desarrollo de software",
+  "Biología"
 ];

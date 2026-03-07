@@ -9,6 +9,8 @@
 // tutorías o cualquier otro tipo de evento programado.
 
 // Luego mejor le ponemos React Big Calendar
+// src/components/calendar/CalendarWrapper.tsx
+
 interface CalendarEvent {
   title: string;
   start: Date;
@@ -19,19 +21,48 @@ interface CalendarWrapperProps {
   events: CalendarEvent[];
 }
 
-// Este componente es un ejemplo básico de cómo mostrar eventos en un calendario.
 export default function CalendarWrapper({ events }: CalendarWrapperProps) {
   return (
-    <div className="calendar-wrapper" style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px", margin: "8px" }}>
-      <h2>Calendar</h2>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+    <div className="bg-amber-300 border border-gray-200 rounded-xl p-6 shadow-sm">
+
+      {/* header */}
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-semibold text-gray-800">
+          Calendario
+        </h2>
+
+        <span className="text-sm text-gray-500">
+          {events.length} eventos
+        </span>
+      </div>
+
+      {/* lista de eventos */}
+      <div className="space-y-3">
+
+        {events.length === 0 && (
+          <p className="text-sm text-gray-500">
+            No hay eventos programados
+          </p>
+        )}
+
         {events.map((event, index) => (
-          <li key={index} style={{ marginBottom: "8px", padding: "8px", border: "1px solid #eee", borderRadius: "4px" }}>
-            <strong>{event.title}</strong><br />
-            <span>{event.start.toLocaleString()} - {event.end.toLocaleString()}</span>
-          </li>
+          <div
+            key={index}
+            className="border border-gray-100 rounded-lg p-4 transition hover:shadow-sm hover:bg-gray-50 bg-white"
+          >
+
+            <p className="font-medium text-gray-800">
+              {event.title}
+            </p>
+
+            <p className="text-xs text-gray-500 mt-1">
+              {event.start.toLocaleString()} — {event.end.toLocaleString()}
+            </p>
+
+          </div>
         ))}
-      </ul>
+
+      </div>
     </div>
   );
 }

@@ -34,4 +34,11 @@ export const personalDataMocks: PersonalData[] = [
         semestre: "8vo semestre",
         carrera: "Ingeniería en Software",
     },
+    {
+    id: "t1",
+    correo: "laura@universidad.edu",
+    telefono: "555-123-4567",
+    semestre: "N/A",
+    carrera: "Matemáticas",
+  }
 ];

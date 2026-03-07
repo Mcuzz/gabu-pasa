@@ -2,12 +2,14 @@
 // (ojito, es compartido entre el estudiante y el tutor)
 
 import Sidebar, { SidebarItem } from "./Sidebar";
+ 
 
 // Componente DashboardLayout que recibe los elementos de 
 // la barra lateral y el contenido principal
 interface DashboardLayoutProps {
   sidebarItems: SidebarItem[];
   children: React.ReactNode;
+  sidebarColor?: string;
 }
 
 // Este componente se encarga de estructurar el layout del 
@@ -15,11 +17,13 @@ interface DashboardLayoutProps {
 // principal de contenido.
 export default function DashboardLayout({
     sidebarItems,
-    children,
+    children
 }: DashboardLayoutProps) {
     return (
         <div className="flex">
-            <Sidebar items={sidebarItems} />
+            <Sidebar 
+            items={sidebarItems} 
+            />
             <main className="flex-1 p-6 bg-gray-100 min-h-sreen">
                 {children}
                 </main>

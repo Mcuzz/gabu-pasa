@@ -11,10 +11,7 @@ interface ChatWindowProps {
   currentUserId: string; // importante para saber quién es "me"
 }
 
-export default function ChatWindow({
-  chat,
-  currentUserId,
-}: ChatWindowProps) {
+export default function ChatWindow({ chat, currentUserId }: ChatWindowProps) {
   const [input, setInput] = useState("");
   const [localMessages, setLocalMessages] = useState<Message[]>([]);
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -46,28 +43,22 @@ export default function ChatWindow({
     setInput("");
   };
 
-  const allMessages: Message[] = [
-    ...chat.messages,
-    ...localMessages,
-  ];
+  const allMessages: Message[] = [...chat.messages, ...localMessages];
+
+  const visibleMessages = allMessages.slice(-3);
 
   return (
     <div className="flex flex-col h-full">
-
       {/* Header */}
-      <div className="p-4 border-b font-semibold">
-        Chat activo
-      </div>
+      <div className="p-4 border-b font-semibold">Nombre del destinatario</div>
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 flex flex-col">
-        {allMessages.map((msg) => (
+        {visibleMessages.map((msg) => (
           <ChatBubble
             key={msg.id}
             message={msg.content}
-            sender={
-              msg.senderId === currentUserId ? "me" : "other"
-            }
+            sender={msg.senderId === currentUserId ? "me" : "other"}
             timestamp={new Date(msg.timestamp).toLocaleTimeString()}
           />
         ))}
@@ -84,9 +75,7 @@ export default function ChatWindow({
           placeholder="Tu mensaje..."
         />
 
-        <Button onClick={handleSend}>
-          Enviar
-        </Button>
+        <Button onClick={handleSend}>Enviar</Button>
       </div>
     </div>
   );

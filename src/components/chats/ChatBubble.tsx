@@ -30,7 +30,7 @@ export default function ChatBubble({
         marginBottom: "8px",
         padding: "8px 12px",
         borderRadius: "16px",
-        backgroundColor: isMe ? "#DCF8C6" : "#E5E5EA",
+        backgroundColor: isMe ? "#DCF8C6" : "#F5D154",
       }}
     >
       <p style={{ margin: 0 }}>{message}</p>
