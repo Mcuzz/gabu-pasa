@@ -1,35 +1,23 @@
-// DashboardLayout.tsx 
-// (ojito, es compartido entre el estudiante y el tutor)
-
 import Sidebar, { SidebarItem } from "./Sidebar";
- 
 
-// Componente DashboardLayout que recibe los elementos de 
-// la barra lateral y el contenido principal
 interface DashboardLayoutProps {
   sidebarItems: SidebarItem[];
   children: React.ReactNode;
-  sidebarColor?: string;
 }
 
-// Este componente se encarga de estructurar el layout del 
-// dashboard, incluyendo la barra lateral y el área 
-// principal de contenido.
 export default function DashboardLayout({
-    sidebarItems,
-    children
+  sidebarItems,
+  children,
 }: DashboardLayoutProps) {
-    return (
-        <div className="flex">
-            <Sidebar 
-            items={sidebarItems} 
-            />
-            <main className="flex-1 p-6 bg-gray-100 min-h-sreen">
-                {children}
-                </main>
+  return (
+    <div className="app-shell lg:flex lg:items-stretch">
+      <Sidebar items={sidebarItems} />
+
+      <main className="app-main flex-1">
+        <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 md:py-24 xl:px-8">
+          {children}
         </div>
-    );
+      </main>
+    </div>
+  );
 }
-
-
-
