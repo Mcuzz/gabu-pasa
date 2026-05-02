@@ -5,6 +5,7 @@
 .register-form-side {
   overflow-y: auto;
   max-height: 90vh;
+  padding-top: 13rem;
 }
 
 /* ── Step container ── */

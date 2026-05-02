@@ -17,9 +17,13 @@ export default function ChatWindow({ chat, currentUserId }: ChatWindowProps) {
   const [localMessages, setLocalMessages] = useState<Message[]>([]);
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
+  // Solo hace scroll cuando el usuario envía un mensaje nuevo,
+  // no al montar el componente ni al cambiar de chat.
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [localMessages, chat]);
+    if (localMessages.length > 0) {
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [localMessages]);
 
   const recipientName = useMemo(() => {
     if (!chat) return "";
