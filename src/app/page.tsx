@@ -3,14 +3,14 @@ import Link from "next/link";
 const entryPoints = [
   {
     title: "Panel de estudiante",
-    href: "/home_student",
+    href: "/login?role=student",
     description:
       "Explora tutores, consulta materiales, revisa tus sesiones y califica la experiencia recibida.",
     stats: ["Busqueda de tutores", "Mensajeria", "Archivos academicos"],
   },
   {
     title: "Panel de tutor",
-    href: "/home",
+    href: "/login?role=tutor",
     description:
       "Gestiona estudiantes, organiza tus horarios, comparte recursos y da seguimiento a solicitudes.",
     stats: ["Dashboard", "Videollamadas", "Disponibilidad"],
