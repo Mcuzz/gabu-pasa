@@ -10,13 +10,11 @@ export default function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
   return (
-    <div className="app-shell lg:flex lg:items-stretch">
+    <div className="app-shell min-h-screen">
       <Sidebar items={sidebarItems} />
 
-      <main className="app-main flex-1">
-        <div className="mx-auto max-w-7xl px-4 py-20 md:px-6 md:py-24 xl:px-8">
-          {children}
-        </div>
+      <main className="app-dashboard-main">
+        <div className="app-dashboard-content">{children}</div>
       </main>
     </div>
   );

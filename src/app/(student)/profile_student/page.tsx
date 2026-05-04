@@ -17,14 +17,14 @@ export default function ProfileStudent() {
   const personalData = personalDataMocks.find((p) => p.id === student.id);
 
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Mi perfil"
         subtitle="Consulta y ajusta tu informacion personal y academica."
       />
 
-      <div className="grid items-start gap-6 xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
-        <aside className="space-y-6 xl:sticky xl:top-6">
+      <div className="grid items-start gap-6 2xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
+        <aside className="space-y-6 2xl:sticky 2xl:top-8">
           <ProfileAvatar id={student.id} name={student.name} />
           {personalData && <StudentData data={personalData} />}
         </aside>

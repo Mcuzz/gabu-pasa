@@ -5,10 +5,10 @@ import PageHeader from "@/components/shared/PageHeader";
 
 export default function MessagingStudent() {
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Mensajeria"
-        subtitle="Da seguimiento a tus conversaciones con tutores y mantiene organizada la comunicacion academica."
+        subtitle="Da seguimiento a tus conversaciones con tutores y manten organizada la comunicacion academica."
       />
 
       <ChatPanel />

@@ -12,14 +12,14 @@ export default function Page() {
   const recentStudents = studentsMock.slice(0, 4);
 
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Dashboard del tutor"
         subtitle="Resumen general de tus metricas, actividad reciente, tutorias agendadas y solicitudes pendientes."
       />
 
-      <section className="grid gap-6 lg:grid-cols-5">
-        <div className="space-y-6 lg:col-span-3">
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.95fr)]">
+        <div className="space-y-6">
           <div className="app-card p-6">
             <h2 className="app-title mb-2 text-xl font-semibold">
               Tu calificacion general es de 100%
@@ -42,7 +42,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="space-y-6 lg:col-span-2">
+        <div className="space-y-6">
           <div className="app-card-soft p-6">
             <div className="mb-4 flex items-center justify-between gap-3">
               <h2 className="app-title text-lg font-semibold">Alumnos recientes</h2>
@@ -54,7 +54,7 @@ export default function Page() {
             {recentStudents.length === 0 ? (
               <p className="text-sm app-muted">No hay alumnos recientes.</p>
             ) : (
-              <div className="app-scrollbar space-y-4 max-h-72 overflow-y-auto pr-2">
+              <div className="app-scrollbar max-h-72 space-y-4 overflow-y-auto pr-2">
                 {recentStudents.map((student) => (
                   <LastStudent
                     key={student.id}

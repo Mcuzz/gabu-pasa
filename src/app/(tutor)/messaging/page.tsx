@@ -12,14 +12,14 @@ export default function TutorMessaging() {
   const activeChat = chatsMock.find((chat) => chat.id === activeChatId);
 
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Mensajeria"
         subtitle="Centraliza tus conversaciones con estudiantes para resolver dudas y dar seguimiento a cada sesion."
       />
 
-      <div className="grid h-[80vh] grid-cols-1 gap-6 lg:grid-cols-3">
-        <aside className="app-card-strong col-span-1 flex flex-col overflow-hidden">
+      <div className="grid min-h-[calc(100vh-16rem)] grid-cols-1 gap-6 xl:grid-cols-[minmax(320px,360px)_minmax(0,1fr)]">
+        <aside className="app-card-strong flex min-h-[420px] flex-col overflow-hidden">
           <ProfileCard />
 
           <ChatList
@@ -29,7 +29,7 @@ export default function TutorMessaging() {
           />
         </aside>
 
-        <section className="app-card-strong col-span-1 overflow-hidden lg:col-span-2">
+        <section className="app-card-strong min-h-[420px] overflow-hidden">
           <ChatWindow chat={activeChat} currentUserId="tutor-user-id" />
         </section>
       </div>

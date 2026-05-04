@@ -16,16 +16,15 @@ export default function ProfileTutor() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Mi perfil"
         subtitle="Verifica y actualiza tu informacion personal y academica."
       />
 
-      <div className="grid items-start gap-6 xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
-        <section className="space-y-6 xl:sticky xl:top-6">
+      <div className="grid items-start gap-6 2xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)]">
+        <section className="space-y-6 2xl:sticky 2xl:top-8">
           <ProfileAvatar id={tutor.id} name={tutor.name} />
-
           {personalData && <TutorData data={personalData} />}
         </section>
 

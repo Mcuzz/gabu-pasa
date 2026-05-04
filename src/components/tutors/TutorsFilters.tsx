@@ -23,7 +23,7 @@ export default function TutorsFilters({
   };
 
   return (
-    <section className="app-card-soft p-4">
+    <section className="app-card-soft p-4 md:p-5">
       <div className="space-y-4 text-[color:var(--foreground)]">
         <FilterPanel
           filters={[subjectFilter]}

@@ -8,13 +8,13 @@ import PageHeader from "@/components/shared/PageHeader";
 
 export default function HomeStudent() {
   return (
-    <div className="space-y-6">
+    <div className="app-page">
       <PageHeader
         title="Dashboard del estudiante"
         subtitle="Resumen general de tus tutorias, conversaciones activas y proximas sesiones programadas."
       />
 
-      <section className="grid gap-6 xl:grid-cols-[1.5fr_0.9fr]">
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.95fr)]">
         <div className="space-y-6">
           <StatsSection />
           <ChatSection />

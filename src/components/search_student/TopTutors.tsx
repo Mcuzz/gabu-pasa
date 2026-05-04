@@ -11,8 +11,8 @@ export default function TopTutors({ tutors }: Props) {
     .slice(0, 3);
 
   return (
-    <aside className="col-span-1">
-      <div className="app-card-soft space-y-4 p-4">
+    <aside className="min-w-0 xl:sticky xl:top-8">
+      <div className="app-card-soft space-y-4 p-4 md:p-5">
         <h3 className="app-title font-semibold">Mejores calificados</h3>
 
         {topTutors.map((tutor) => (
